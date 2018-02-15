@@ -9,6 +9,14 @@ $ npm start
 ```
 Open http://localhost:3000/
 
+## To Do
+* Enable cache busting in Webpack
+* CSS file bundling using css-loader in webpack
+* Enable source maps in webpack
+* Add debug commands to package.json
+* Hot module replacement
+* Auto-restart web server when changes are detected via nodemon
+
 ## Tests
 Unit Testing with Jest
 ```
