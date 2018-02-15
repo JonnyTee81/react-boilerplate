@@ -4,6 +4,7 @@
   "description": "Development stack consists of React, Babel, Express, Jest, Webpack.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "jest ./src",
     "build-babel": "npm run build-babel-server && npm run build-babel-client",
     "build-babel-server": "babel src/server --out-dir ./dist",
@@ -23,6 +24,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "jest": "^22.2.1"
+    "jest": "^22.2.1",
+    "webpack-node-externals": "^1.6.0"
   }
 }

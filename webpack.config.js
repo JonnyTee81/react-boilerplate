@@ -1,4 +1,5 @@
 let path = require('path');
+let nodeExternals = require("webpack-node-externals");
 
 const moduleObj = {
     loaders: [
@@ -17,7 +18,7 @@ const client = {
     target: 'web',
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist/public')
+        path: path.resolve(__dirname, 'dist')
     },
     module: moduleObj
 };
@@ -31,7 +32,8 @@ const server = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   },
-  module: moduleObj
+  module: moduleObj,
+  externals: [nodeExternals()]
 };
 
 module.exports = [client, server];
