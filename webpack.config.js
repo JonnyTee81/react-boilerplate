@@ -1,5 +1,6 @@
 let path = require('path');
 let nodeExternals = require("webpack-node-externals");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const moduleObj = {
     loaders: [
@@ -18,9 +19,14 @@ const client = {
     target: 'web',
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist/public')
     },
-    module: moduleObj
+    module: moduleObj,
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: 'src/client/index.html'
+        })
+    ]
 };
 
 const server = {
