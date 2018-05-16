@@ -15,7 +15,7 @@ Open http://localhost:3000/
 * Enable source maps in webpack
 * Add debug commands to package.json
 * Hot module replacement
-* Auto-restart web server when changes are detected via nodemon
+[x] Auto-restart web server when changes are detected via nodemon
 
 ## Tests
 Unit Testing with Jest

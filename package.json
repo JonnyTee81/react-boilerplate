@@ -4,12 +4,13 @@
   "description": "Development stack consists of React, Babel, Express, Jest, Webpack.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack --mode=none --watch",
     "build": "webpack",
     "test": "jest ./src",
     "build-babel": "npm run build-babel-server && npm run build-babel-client",
     "build-babel-server": "babel src/server --out-dir ./dist",
     "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
-    "start": "node ./dist/server.js",
+    "dev:server": "nodemon ./dist/server.js",
     "clean": "rimraf dist node_modules"
   },
   "author": "",
@@ -30,7 +31,10 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^22.4.3",
+    "nodemon": "^1.17.4",
+    "nodemon-webpack-plugin": "^3.0.1",
     "react-test-renderer": "^16.3.2",
+    "webpack-cli": "^2.1.3",
     "webpack-node-externals": "^1.7.2"
   },
   "jest": {

@@ -1,9 +1,10 @@
 let path = require('path');
 let nodeExternals = require("webpack-node-externals");
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const moduleObj = {
-    loaders: [
+    rules: [
         {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -39,6 +40,9 @@ const server = {
     path: path.resolve(__dirname, "dist")
   },
   module: moduleObj,
+    plugins: [
+        new NodemonPlugin(),
+    ],
   externals: [nodeExternals()]
 };
 
