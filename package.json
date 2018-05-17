@@ -4,14 +4,17 @@
   "description": "Development stack consists of React, Babel, Express, Jest, Webpack.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode=none --watch",
     "build": "webpack",
-    "test": "jest ./src",
     "build-babel": "npm run build-babel-server && npm run build-babel-client",
     "build-babel-server": "babel src/server --out-dir ./dist",
     "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
+    "clean": "rimraf dist node_modules",
     "dev:server": "nodemon ./dist/server.js",
-    "clean": "rimraf dist node_modules"
+    "plato": "plato -r -d report -e .eslintrc -x test.js src",
+    "stats": "NODE_ENV=production webpack -p --json > webpack.stats.json",
+    "start": "webpack --mode=none --watch",
+    "test": "jest ./src",
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^22.4.3",
     "nodemon": "^1.17.4",
